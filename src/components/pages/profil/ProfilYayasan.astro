@@ -1,8 +1,8 @@
 ---
-import { Building2, Heart, Users, Target } from "lucide-astro";
+import { Building2, Heart, Users, Target, Eye, Lightbulb } from "lucide-astro";
 ---
 
-<section id="profile" class="font-sora bg-gradient-to-br from-[#F5F5F5] via-white to-[#F5F5F5] py-16 lg:py-24 overflow-hidden relative scroll-mt-20">
+<section id="profile" class="bg-gradient-to-br from-[#F5F5F5] via-white to-[#F5F5F5] py-16 lg:py-24 overflow-hidden relative scroll-mt-20">
   <!-- Background decorative elements -->
   <div class="absolute top-0 right-0 w-96 h-96 bg-[#388E3C]/5 rounded-full blur-3xl -z-10"></div>
   <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#81D4FA]/5 rounded-full blur-3xl -z-10"></div>
@@ -64,6 +64,75 @@ import { Building2, Heart, Users, Target } from "lucide-astro";
           {/* Decorative Elements */}
           <div class="absolute -top-6 -right-6 w-24 h-24 bg-[#81D4FA]/20 rounded-full blur-xl hidden lg:block"></div>
           <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-[#FFD700]/20 rounded-full blur-xl hidden lg:block"></div>
+        </div>
+      </div>
+
+      {/* Visi Misi Cards Section */}
+      <div id="visi-misi" class="scroll-mt-20">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#388E3C]/10 rounded-full border border-[#388E3C]/20">
+            <Target class="w-4 h-4 text-[#388E3C]" />
+            <span class="text-sm font-medium text-[#388E3C] uppercase tracking-wider">Visi & Misi</span>
+          </div>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#388E3C] via-[#81D4FA] to-[#FFD700] bg-clip-text text-transparent leading-tight pb-1">Visi & Misi Yayasan Sawiyan</h2>
+        </div>
+
+        {/* Visi Misi Cards */}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Visi Card */}
+          <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 p-8 relative overflow-hidden">
+            {/* Decorative gradient accent */}
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#388E3C] to-[#81D4FA]"></div>
+
+            {/* Icon */}
+            <div class="mb-6">
+              <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-[#388E3C]/10 to-[#388E3C]/5 flex items-center justify-center">
+                <Eye class="w-8 h-8 text-[#388E3C]" />
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Visi</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Menjadi yayasan terdepan dalam memberikan kontribusi positif bagi masyarakat melalui program-program yang berkelanjutan, inovatif, dan berdampak luas dalam bidang sosial, kemanusiaan, dan keagamaan.
+            </p>
+          </div>
+
+          {/* Misi Card */}
+          <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 p-8 relative overflow-hidden">
+            {/* Decorative gradient accent */}
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#81D4FA] to-[#FFD180]"></div>
+
+            {/* Icon */}
+            <div class="mb-6">
+              <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-[#81D4FA]/10 to-[#81D4FA]/5 flex items-center justify-center">
+                <Lightbulb class="w-8 h-8 text-[#81D4FA]" />
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Misi</h3>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#388E3C] mt-2"></div>
+                <span>Menyelenggarakan program sosial untuk membantu masyarakat yang membutuhkan</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#81D4FA] mt-2"></div>
+                <span>Mengembangkan program kemanusiaan yang berkelanjutan dan berdampak positif</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#FFD180] mt-2"></div>
+                <span>Meningkatkan kualitas hidup masyarakat melalui pendidikan dan pelatihan</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#FFD700] mt-2"></div>
+                <span>Mengembangkan program keagamaan untuk memperkuat nilai-nilai spiritual</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-2 h-2 rounded-full bg-[#388E3C] mt-2"></div>
+                <span>Membangun jaringan kerjasama dengan berbagai pihak untuk memperluas dampak program</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

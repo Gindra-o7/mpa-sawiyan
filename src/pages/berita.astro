@@ -1,16 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeaderNews from "../components/pages/news/HeaderNews.astro";
-import FilterCategories from "../components/pages/news/FilterCategories.astro";
-import ListBerita from "../components/pages/news/ListBerita.astro";
-import PaginationNews from "../components/pages/news/PaginationNews.astro";
+import HeroWithSidebar from "../components/pages/berita/HeroWithSidebar.astro";
+import LatestBeritaCarousel from "../components/pages/berita/LatestBeritaCarousel.astro";
 
-interface NewsCategory {
-  name: string;
-  active: boolean;
-}
-
-interface NewsItem {
+interface BeritaItem {
   slug: string;
   category: string;
   judul: string;
@@ -20,19 +13,12 @@ interface NewsItem {
   author: string;
 }
 
-const newsCategories: NewsCategory[] = [
-  { name: "Semua", active: true },
-  { name: "Berita", active: false },
-  { name: "Pengumuman", active: false },
-  { name: "Kegiatan", active: false },
-];
-
-const newsData: NewsItem[] = [
+const allBeritaData: BeritaItem[] = [
   {
     slug: "program-beasiswa-2025",
     category: "Pengumuman",
     judul: "Program Beasiswa Yayasan Sawiyan 2025",
-    thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&h=1080&fit=crop",
     excerpt: "Yayasan Sawiyan membuka program beasiswa untuk siswa berprestasi dan keluarga kurang mampu. Program ini bertujuan untuk memberikan kesempatan pendidikan yang lebih baik bagi generasi penerus bangsa.",
     date_created: "2024-11-15T10:00:00",
     author: "Admin Yayasan",
@@ -83,27 +69,26 @@ const newsData: NewsItem[] = [
     author: "Divisi Program Sosial",
   },
 ];
+
+// Hero berita (first item)
+const heroBerita = allBeritaData[1];
+
+// Sidebar berita (items 1-5 for sidebar)
+const sidebarBerita = allBeritaData.slice(1, 6);
+
+// Latest berita for carousel (all items, sorted by date)
+const latestBerita = [...allBeritaData].sort((a, b) => new Date(b.date_created).getTime() - new Date(a.date_created).getTime());
 ---
 
 <Layout title="Berita">
-  <section class="font-sora bg-gradient-to-br from-[#F5F5F5] via-white to-[#F5F5F5] py-16 lg:py-24 overflow-hidden relative">
-    <!-- Background decorative elements -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-[#81D4FA]/5 rounded-full blur-3xl -z-10"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#FFD180]/5 rounded-full blur-3xl -z-10"></div>
+  <section class="bg-gradient-to-br from-[#F5F5F5] via-white to-[#F5F5F5] py-8 lg:py-16 overflow-hidden relative">
+    <div class="container mx-auto px-6 md:px-8 max-w-7xl relative z-10 mt-10">
+      <div class="flex flex-col gap-16">
+        {/* Hero Section with Sidebar */}
+        <HeroWithSidebar heroBerita={heroBerita} sidebarBerita={sidebarBerita} />
 
-    <div class="container mx-auto px-6 md:px-8 max-w-7xl relative z-10">
-      <div class="flex flex-col gap-12">
-        {/* Header Section */}
-        <HeaderNews />
-
-        {/* Filter Categories */}
-        <FilterCategories categories={newsCategories} />
-
-        {/* News Grid */}
-        <ListBerita newsData={newsData} />
-
-        {/* Pagination */}
-        <PaginationNews currentPage={1} totalPages={3} />
+        {/* Latest berita Carousel */}
+        <LatestBeritaCarousel latestBerita={latestBerita} />
       </div>
     </div>
   </section>

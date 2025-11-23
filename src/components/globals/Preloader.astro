@@ -30,6 +30,16 @@
 
   <!-- Closing animation overlay -->
   <div id="preloader-closing" class="absolute bg-[#388E3C] rounded-full opacity-0 pointer-events-none" style="left: 50%; top: 50%; width: 0; height: 0; transform: translate(-50%, -50%) scale(0);"></div>
+
+  <!-- Cursor Effect -->
+  <div id="cursor-effect" class="absolute pointer-events-none opacity-0 z-[10000]" style="left: 50%; top: 50%; transform: translate(-50%, -50%);">
+    <!-- Ripple effect circles -->
+    <div id="cursor-ripple-1" class="absolute rounded-full border-4 border-[#FFD700] opacity-0 w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
+    <div id="cursor-ripple-2" class="absolute rounded-full border-4 border-[#FFD180] opacity-0 w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
+    <div id="cursor-ripple-3" class="absolute rounded-full border-4 border-[#81D4FA] opacity-0 w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
+    <!-- Center glow -->
+    <div id="cursor-glow" class="absolute rounded-full bg-gradient-to-r from-[#FFD700] via-[#FFD180] to-[#81D4FA] opacity-0 blur-xl w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
+  </div>
 </div>
 
 <style>
@@ -158,26 +168,26 @@
     return interval;
   };
 
-  // Animate closing with cursor position
+  // Animate closing with cursor position and cursor effect
   const animateClosing = () => {
     const preloader = document.getElementById("preloader");
     const closingOverlay = document.getElementById("preloader-closing");
+    const cursorEffect = document.getElementById("cursor-effect");
+    const cursorRipple1 = document.getElementById("cursor-ripple-1");
+    const cursorRipple2 = document.getElementById("cursor-ripple-2");
+    const cursorRipple3 = document.getElementById("cursor-ripple-3");
+    const cursorGlow = document.getElementById("cursor-glow");
 
-    if (!preloader || !closingOverlay) return;
+    if (!preloader || !closingOverlay || !cursorEffect) return;
 
     // Get the latest cursor position at the moment of closing
-    // Use the most recent cursor position we have tracked
     let targetX = cursorX;
     let targetY = cursorY;
 
-    // Debug: Check if we have cursor position
-    // If cursor hasn't moved from initial center position and we haven't detected movement,
-    // it means user hasn't moved mouse, so we should still use center
     const isInitialCenter = targetX === window.innerWidth / 2 && targetY === window.innerHeight / 2;
 
     // If we have a valid cursor position that's not the initial center, use it
     if (hasCursorPosition && !isNaN(targetX) && !isNaN(targetY) && !isInitialCenter) {
-      // Use the tracked cursor position
       targetX = cursorX;
       targetY = cursorY;
     } else {
@@ -190,6 +200,11 @@
     targetX = Math.max(0, Math.min(targetX, window.innerWidth));
     targetY = Math.max(0, Math.min(targetY, window.innerHeight));
 
+    // Position cursor effect at cursor location
+    cursorEffect.style.left = `${targetX}px`;
+    cursorEffect.style.top = `${targetY}px`;
+    cursorEffect.style.transform = "translate(-50%, -50%)";
+
     // Calculate distance from all corners to determine max radius needed
     const distances = [
       Math.sqrt(Math.pow(targetX, 2) + Math.pow(targetY, 2)), // Top-left
@@ -200,7 +215,7 @@
     const maxRadius = Math.max(...distances) * 1.5; // Add extra for smooth coverage
     const diameter = maxRadius * 2;
 
-    // Set initial position
+    // Set initial position for closing overlay
     closingOverlay.style.left = `${targetX}px`;
     closingOverlay.style.top = `${targetY}px`;
     closingOverlay.style.transform = "translate(-50%, -50%) scale(0)";
@@ -210,20 +225,69 @@
     // Trigger reflow
     closingOverlay.offsetHeight;
 
-    // Start closing animation (faster animation)
+    // Start cursor effect animation
+    setTimeout(() => {
+      cursorEffect.style.opacity = "1";
+      cursorEffect.style.transition = "opacity 0.3s ease-out";
+
+      // Animate ripple effects
+      if (cursorRipple1 && cursorRipple2 && cursorRipple3) {
+        // Ripple 1 - immediate
+        cursorRipple1.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+        cursorRipple1.style.opacity = "1";
+        cursorRipple1.style.transform = "translate(-50%, -50%) scale(4)";
+        cursorRipple1.style.width = "80px";
+        cursorRipple1.style.height = "80px";
+
+        // Ripple 2 (delayed)
+        setTimeout(() => {
+          cursorRipple2.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+          cursorRipple2.style.opacity = "0.7";
+          cursorRipple2.style.transform = "translate(-50%, -50%) scale(5)";
+          cursorRipple2.style.width = "80px";
+          cursorRipple2.style.height = "80px";
+        }, 100);
+
+        // Ripple 3 (more delayed)
+        setTimeout(() => {
+          cursorRipple3.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+          cursorRipple3.style.opacity = "0.5";
+          cursorRipple3.style.transform = "translate(-50%, -50%) scale(6)";
+          cursorRipple3.style.width = "80px";
+          cursorRipple3.style.height = "80px";
+        }, 200);
+      }
+
+      // Animate glow effect
+      if (cursorGlow) {
+        cursorGlow.style.transition = "opacity 0.4s ease-out, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+        cursorGlow.style.opacity = "0.8";
+        cursorGlow.style.transform = "translate(-50%, -50%) scale(3)";
+      }
+    }, 10);
+
+    // Start closing animation
     setTimeout(() => {
       closingOverlay.style.opacity = "1";
       closingOverlay.style.transform = "translate(-50%, -50%) scale(1)";
       closingOverlay.style.transition = "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease-out";
     }, 10);
 
-    // Fade out preloader content (faster fade)
+    // Fade out preloader content
     setTimeout(() => {
       preloader.style.opacity = "0";
       preloader.style.transition = "opacity 0.3s ease-out";
     }, 50);
 
-    // Remove preloader after animation (reduced from 1000ms to 700ms)
+    // Fade out cursor effect
+    setTimeout(() => {
+      if (cursorEffect) {
+        cursorEffect.style.opacity = "0";
+        cursorEffect.style.transition = "opacity 0.3s ease-out";
+      }
+    }, 400);
+
+    // Remove preloader after animation
     setTimeout(() => {
       preloader.style.display = "none";
       document.body.style.overflow = "";
