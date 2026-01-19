@@ -10,20 +10,20 @@ const logoysim = "/logo-ysim.png";
 
 <section id="struktur-organisasi" class="bg-gradient-to-br from-[#F5F5F5] via-white to-[#F5F5F5] py-20 lg:py-32 overflow-hidden relative scroll-mt-20">
   <!-- Background decorative elements -->
-  <div class="absolute top-0 right-0 w-96 h-96 bg-[#388E3C]/5 rounded-full blur-3xl -z-10 animate-pulse"></div>
-  <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#81D4FA]/5 rounded-full blur-3xl -z-10 animate-pulse" style="animation-delay: 1s;"></div>
-  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FFD700]/3 rounded-full blur-3xl -z-10"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl -z-10 animate-pulse"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-secondary/5 rounded-full blur-3xl -z-10 animate-pulse" style="animation-delay: 1s;"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-accent-gold/3 rounded-full blur-3xl -z-10"></div>
 
   <div class="container mx-auto px-6 md:px-8 max-w-7xl relative z-10">
     <div class="flex flex-col gap-16">
       {/* Header */}
       <FadeInSection client:load delay={0}>
         <div class="text-center max-w-4xl mx-auto space-y-6">
-          <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#388E3C]/10 to-[#81D4FA]/10 rounded-full border border-[#388E3C]/30 backdrop-blur-sm">
-            <Building2 class="w-5 h-5 text-[#388E3C]" />
-            <span class="text-sm font-semibold text-[#388E3C] uppercase tracking-wider">Struktur Organisasi</span>
+          <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-brand-primary/10 to-brand-secondary/10 rounded-full border border-brand-primary/30 backdrop-blur-sm">
+            <Building2 class="w-5 h-5 text-brand-primary" />
+            <span class="text-sm font-semibold text-brand-primary uppercase tracking-wider">Struktur Organisasi</span>
           </div>
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-[#388E3C] via-[#81D4FA] to-[#FFD700] bg-clip-text text-transparent leading-tight pb-1">Struktur Yayasan Sawiyan</h2>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent-gold bg-clip-text text-transparent leading-tight pb-1">Struktur Yayasan Sawiyan</h2>
           <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-medium">Organisasi yang Solid dan Profesional</p>
         </div>
       </FadeInSection>
@@ -34,11 +34,11 @@ const logoysim = "/logo-ysim.png";
         <FadeInSection client:load delay={0.1}>
           <div class="flex justify-center mb-12">
             <AnimatedCard client:load delay={0.1}>
-              <div class="bg-gradient-to-br from-[#388E3C] to-[#2E7D32] rounded-2xl shadow-2xl p-8 w-80 border-4 border-white hover:scale-105 transition-transform duration-300">
+              <div class="bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-2xl shadow-2xl p-8 w-80 border-4 border-white hover:scale-105 transition-transform duration-300">
                 <div class="flex flex-col items-center text-center gap-4">
                   <div class="w-24 h-24 bg-white rounded-2xl shadow-lg p-3 flex items-center justify-center">
                     <img src={logoysim} alt="YSIM Logo" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                    <div class="w-full h-full bg-gradient-to-br from-[#388E3C] to-[#2E7D32] rounded-xl items-center justify-center hidden">
+                    <div class="w-full h-full bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-xl items-center justify-center hidden">
                       <Building2 class="w-12 h-12 text-white" />
                     </div>
                   </div>
@@ -52,7 +52,7 @@ const logoysim = "/logo-ysim.png";
 
         {/* Vertical Line from YSIM */}
         <div class="flex justify-center mb-8">
-          <div class="w-1 h-12 bg-gradient-to-b from-[#388E3C] to-[#2E7D32]"></div>
+          <div class="w-1 h-12 bg-gradient-to-b from-brand-primary to-brand-primary-dark"></div>
         </div>
 
         {/* Level 2 - Pembina & Pengawas */}
@@ -65,7 +65,7 @@ const logoysim = "/logo-ysim.png";
                   <div class="flex flex-col items-center text-center gap-4">
                     <div class="w-20 h-20 bg-white rounded-xl shadow-lg p-2 flex items-center justify-center">
                       <img src={logoysim} alt="Logo" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                      <div class="w-full h-full bg-gradient-to-br from-[#388E3C] to-[#2E7D32] rounded-lg items-center justify-center hidden">
+                      <div class="w-full h-full bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-lg items-center justify-center hidden">
                         <Users class="w-10 h-10 text-white" />
                       </div>
                     </div>
@@ -78,11 +78,11 @@ const logoysim = "/logo-ysim.png";
             {/* Pengawas Yayasan */}
             <StaggerItem client:load>
               <AnimatedCard client:load delay={0.1}>
-                <div class="bg-gradient-to-br from-[#388E3C] to-[#2E7D32] rounded-2xl shadow-xl p-6 border-2 border-white hover:shadow-2xl transition-all duration-300 h-full">
+                <div class="bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-2xl shadow-xl p-6 border-2 border-white hover:shadow-2xl transition-all duration-300 h-full">
                   <div class="flex flex-col items-center text-center gap-4">
                     <div class="w-20 h-20 bg-white rounded-xl shadow-lg p-2 flex items-center justify-center">
                       <img src={logoysim} alt="Logo" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                      <div class="w-full h-full bg-gradient-to-br from-[#388E3C] to-[#2E7D32] rounded-lg items-center justify-center hidden">
+                      <div class="w-full h-full bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-lg items-center justify-center hidden">
                         <Shield class="w-10 h-10 text-white" />
                       </div>
                     </div>
@@ -96,12 +96,12 @@ const logoysim = "/logo-ysim.png";
 
         {/* Vertical Line before Executive Board */}
         <div class="flex justify-center mb-8">
-          <div class="w-1 h-12 bg-gradient-to-b from-[#388E3C] to-[#2E7D32]"></div>
+          <div class="w-1 h-12 bg-gradient-to-b from-brand-primary to-brand-primary-dark"></div>
         </div>
 
         {/* Horizontal Line for Executive Board */}
         <div class="flex justify-center mb-8">
-          <div class="h-1 w-full max-w-4xl bg-gradient-to-r from-transparent via-[#388E3C] to-transparent"></div>
+          <div class="h-1 w-full max-w-4xl bg-gradient-to-r from-transparent via-brand-primary to-transparent"></div>
         </div>
 
         {/* Level 3 - Executive Board (Ketua, Sekretaris, Bendahara) */}
@@ -110,11 +110,11 @@ const logoysim = "/logo-ysim.png";
             {/* Ketua Yayasan */}
             <StaggerItem client:load>
               <AnimatedCard client:load delay={0.05}>
-                <div class="bg-gradient-to-br from-[#388E3C] to-[#2E7D32] rounded-2xl shadow-xl p-6 border-2 border-white hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
+                <div class="bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-2xl shadow-xl p-6 border-2 border-white hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
                   <div class="flex flex-col items-center text-center gap-4 relative z-10">
                     <div class="w-20 h-20 bg-white rounded-xl shadow-lg p-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={logoysim} alt="Logo" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                      <div class="w-full h-full bg-gradient-to-br from-[#388E3C] to-[#2E7D32] rounded-lg items-center justify-center hidden">
+                      <div class="w-full h-full bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-lg items-center justify-center hidden">
                         <Crown class="w-10 h-10 text-white" />
                       </div>
                     </div>
@@ -130,11 +130,11 @@ const logoysim = "/logo-ysim.png";
             {/* Sekretaris Yayasan */}
             <StaggerItem client:load>
               <AnimatedCard client:load delay={0.05}>
-                <div class="bg-gradient-to-br from-[#388E3C] to-[#2E7D32] rounded-2xl shadow-xl p-6 border-2 border-white hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
+                <div class="bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-2xl shadow-xl p-6 border-2 border-white hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
                   <div class="flex flex-col items-center text-center gap-4 relative z-10">
                     <div class="w-20 h-20 bg-white rounded-xl shadow-lg p-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={logoysim} alt="Logo" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                      <div class="w-full h-full bg-gradient-to-br from-[#388E3C] to-[#2E7D32] rounded-lg items-center justify-center hidden">
+                      <div class="w-full h-full bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-lg items-center justify-center hidden">
                         <FileText class="w-10 h-10 text-white" />
                       </div>
                     </div>
@@ -150,11 +150,11 @@ const logoysim = "/logo-ysim.png";
             {/* Bendahara Yayasan */}
             <StaggerItem client:load>
               <AnimatedCard client:load delay={0.05}>
-                <div class="bg-gradient-to-br from-[#43A047] to-[#388E3C] rounded-2xl shadow-xl p-6 border-2 border-white hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
+                <div class="bg-gradient-to-br from-brand-primary-lighter to-brand-primary rounded-2xl shadow-xl p-6 border-2 border-white hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
                   <div class="flex flex-col items-center text-center gap-4 relative z-10">
                     <div class="w-20 h-20 bg-white rounded-xl shadow-lg p-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img src={logoysim} alt="Logo" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                      <div class="w-full h-full bg-gradient-to-br from-[#388E3C] to-[#2E7D32] rounded-lg items-center justify-center hidden">
+                      <div class="w-full h-full bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-lg items-center justify-center hidden">
                         <Wallet class="w-10 h-10 text-white" />
                       </div>
                     </div>

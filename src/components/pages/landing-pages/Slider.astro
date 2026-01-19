@@ -14,45 +14,45 @@ export interface Slide {
 const slides: Slide[] = [
 	{
 		gambar: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop",
-		label: "Menjunjung tinggi <span class='text-[#FFD700]'>kejujuran, amanah, dan tanggung jawab </span> dalam setiap aktivitas kelembagaan.",
+		label: "Menjunjung tinggi <span class='text-brand-accent-gold'>kejujuran, amanah, dan tanggung jawab </span> dalam setiap aktivitas kelembagaan.",
 		cta_label: "Integritas",
 		cta_url: "/program",
 		colour: "#FFD700"
 	},
 	{
 		gambar: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1920&h=1080&fit=crop",
-		label: "Mengembangkan <span class='text-[#64B5F6]'>ilmu pengetahuan </span> secara berkelanjutan dengan pendekatan ilmiah dan berbasis nilai Islam.",
+		label: "Mengembangkan <span class='text-brand-secondary-dark'>ilmu pengetahuan </span> secara berkelanjutan dengan pendekatan ilmiah dan berbasis nilai Islam.",
 		cta_label: "Keilmuan",
 		cta_url: "/program",
-		colour: "#64B5F6"
+		colour: "#4FC3F7"
 	},
 	{
 		gambar: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=1920&h=1080&fit=crop",
-		label: "Menjadikan <span class='text-[#4DB6AC]'>Al-Qur'an dan Hadis </span> sebagai landasan utama dalam berpikir, bersikap, dan bertindak.",
+		label: "Menjadikan <span class='text-brand-secondary'>Al-Qur'an dan Hadis </span> sebagai landasan utama dalam berpikir, bersikap, dan bertindak.",
 		cta_label: "Keislaman",
 		cta_url: "/program",
-		colour: "#4DB6AC"
+		colour: "#81D4FA"
 	},
 	{
 		gambar: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop",
-		label: "Mendorong <span class='text-[#BA68C8]'>kreativitas dan pembaruan </span>dalam pendidikan, penelitian, dan pengabdian kepada masyarakat.",
+		label: "Mendorong <span class='text-brand-secondary-light'>kreativitas dan pembaruan </span>dalam pendidikan, penelitian, dan pengabdian kepada masyarakat.",
 		cta_label: "Inovasi",
 		cta_url: "/profile",
-		colour: "#BA68C8"
+		colour: "#B3E5FC"
 	},
 	{
 		gambar: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&h=1080&fit=crop",
-		label: "Mengedepankan <span class='text-[#eb5954]'>kebermanfaatan, pemberdayaan, dan keadilan sosial</span> bagi masyarakat luas.",
+		label: "Mengedepankan <span class='text-brand-primary-light'>kebermanfaatan, pemberdayaan, dan keadilan sosial</span> bagi masyarakat luas.",
 		cta_label: "Kepedulian Sosial",
 		cta_url: "/profile",
-		colour: "#eb5954"
+		colour: "#4CAF50"
 	},
 	{
 		gambar: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&h=1080&fit=crop",
-		label: "Mengembangkan <span class='text-[#FF9800]'>kerja sama </span>dengan berbagai pihak untuk memperluas dampak dan keberlanjutan program yayasan.",
+		label: "Mengembangkan <span class='text-brand-accent-orange'>kerja sama </span>dengan berbagai pihak untuk memperluas dampak dan keberlanjutan program yayasan.",
 		cta_label: "Kolaborasi",
 		cta_url: "/profile",
-		colour: "#FF9800"
+		colour: "#FFD180"
 	}
 ];
 
@@ -82,7 +82,7 @@ const autoplayDelay = 6000;
 							loading="lazy"
 						/>
 						<!-- Gradient overlay untuk kontras yang lebih baik -->
-						<div class="absolute inset-0 bg-gradient-to-br from-[#388E3C]/80 via-[#388E3C]/70 to-[#1B5E20]/80"></div>
+						<div class="absolute inset-0 bg-gradient-to-br from-brand-primary/80 via-brand-primary/70 to-brand-primary-darker/80"></div>
 					</div>
 				))
 			}
@@ -135,34 +135,34 @@ const autoplayDelay = 6000;
 <script define:vars={{ autoplayDelay }}>
 	const slidesData = [
 		{
-			label: "Menjunjung tinggi <span class='text-[#FFD700]'>kejujuran, amanah, dan tanggung jawab </span> dalam setiap aktivitas kelembagaan.",
+			label: "Menjunjung tinggi <span class='text-brand-accent-gold'>kejujuran, amanah, dan tanggung jawab </span> dalam setiap aktivitas kelembagaan.",
 			cta_label: "Integritas",
 			colour: "#FFD700"
 		},
 		{
-			label: "Mengembangkan <span class='text-[#64B5F6]'>ilmu pengetahuan </span> secara berkelanjutan dengan pendekatan ilmiah dan berbasis nilai Islam.",
+			label: "Mengembangkan <span class='text-brand-secondary-dark'>ilmu pengetahuan </span> secara berkelanjutan dengan pendekatan ilmiah dan berbasis nilai Islam.",
 			cta_label: "Keilmuan",
-			colour: "#64B5F6"
+			colour: "#4FC3F7"
 		},
 		{
-			label: "Menjadikan <span class='text-[#4DB6AC]'>Al-Qur'an dan Hadis </span> sebagai landasan utama dalam berpikir, bersikap, dan bertindak.",
+			label: "Menjadikan <span class='text-brand-secondary'>Al-Qur'an dan Hadis </span> sebagai landasan utama dalam berpikir, bersikap, dan bertindak.",
 			cta_label: "Keislaman",
-			colour: "#4DB6AC"
+			colour: "#81D4FA"
 		},
 		{
-			label: "Mendorong <span class='text-[#BA68C8]'>kreativitas dan pembaruan </span>dalam pendidikan, penelitian, dan pengabdian kepada masyarakat.",
+			label: "Mendorong <span class='text-brand-secondary-light'>kreativitas dan pembaruan </span>dalam pendidikan, penelitian, dan pengabdian kepada masyarakat.",
 			cta_label: "Inovasi",
-			colour: "#BA68C8"
+			colour: "#B3E5FC"
 		},
 		{
-			label: "Mengedepankan <span class='text-[#66BB6A]'>kebermanfaatan, pemberdayaan, dan keadilan sosial</span> bagi masyarakat luas.",
+			label: "Mengedepankan <span class='text-brand-primary-light'>kebermanfaatan, pemberdayaan, dan keadilan sosial</span> bagi masyarakat luas.",
 			cta_label: "Kepedulian Sosial",
-			colour: "#66BB6A"
+			colour: "#4CAF50"
 		},
 		{
-			label: "Mengembangkan <span class='text-[#FF9800]'>kerja sama </span>dengan berbagai pihak untuk memperluas dampak dan keberlanjutan program yayasan.",
+			label: "Mengembangkan <span class='text-brand-accent-orange'>kerja sama </span>dengan berbagai pihak untuk memperluas dampak dan keberlanjutan program yayasan.",
 			cta_label: "Kolaborasi",
-			colour: "#FF9800"
+			colour: "#FFD180"
 		}
 	];
 

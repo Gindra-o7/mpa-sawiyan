@@ -43,7 +43,7 @@ const { heroBerita, sidebarBerita } = Astro.props;
         <!-- Call to Action -->
         <a
           href={`/berita/${heroBerita.slug}`}
-          class="group inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gradient-to-r hover:from-[#388E3C] hover:to-[#81D4FA] hover:text-white transition-all duration-300 shadow-lg"
+          class="group inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gradient-to-r hover:from-brand-primary hover:to-brand-secondary hover:text-white transition-all duration-300 shadow-lg"
         >
           <span>Jelajahi</span>
           <ArrowRight class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -59,10 +59,10 @@ const { heroBerita, sidebarBerita } = Astro.props;
       <a href={`/berita/${sidebarBerita[0].slug}`} class="block">
         <div class="relative h-48 overflow-hidden">
           <img src={sidebarBerita[0].thumbnail} alt={sidebarBerita[0].judul} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#388E3C]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
         <div class="p-6">
-          <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#388E3C] transition-colors duration-200 line-clamp-2">
+          <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-primary transition-colors duration-200 line-clamp-2">
             {sidebarBerita[0].judul}
           </h3>
           <div class="text-sm text-gray-500">
@@ -87,9 +87,9 @@ const { heroBerita, sidebarBerita } = Astro.props;
               <div class="flex items-start gap-3">
                 <div class="flex-1 min-w-0">
                   <div class="mb-1">
-                    <span class="inline-block px-2.5 py-1 bg-[#81D4FA]/10 text-[#388E3C] text-xs font-bold rounded uppercase">{berita.category}</span>
+                    <span class="inline-block px-2.5 py-1 bg-brand-secondary/10 text-brand-primary text-xs font-bold rounded uppercase">{berita.category}</span>
                   </div>
-                  <h4 class="text-base font-semibold text-gray-900 mb-1 group-hover:text-[#388E3C] transition-colors duration-200 line-clamp-2">{berita.judul}</h4>
+                  <h4 class="text-base font-semibold text-gray-900 mb-1 group-hover:text-brand-primary transition-colors duration-200 line-clamp-2">{berita.judul}</h4>
                   <div class="text-sm text-gray-500">
                     {berita.author}{" "}
                     {new Intl.DateTimeFormat("id-ID", {

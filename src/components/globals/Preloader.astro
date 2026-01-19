@@ -2,10 +2,10 @@
 // Preloader component dengan animasi yang mengikuti cursor
 ---
 
-<div id="preloader" class="fixed inset-0 z-[9999] bg-[#388E3C] flex items-center justify-center transition-opacity duration-500">
+<div id="preloader" class="fixed inset-0 z-[9999] bg-brand-primary flex items-center justify-center transition-opacity duration-500">
   <!-- Background dengan pattern -->
   <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-[#388E3C] via-[#1B5E20] to-[#388E3C] opacity-90"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-primary-darker to-brand-primary opacity-90"></div>
     <div class="absolute inset-0 opacity-20">
       <div class="absolute top-0 left-0 w-full h-full" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.05) 35px, rgba(255,255,255,0.05) 70px);"></div>
     </div>
@@ -16,29 +16,29 @@
     <!-- Logo/Text Sawiyan -->
     <div class="relative">
       <h1 class="text-4xl md:text-6xl font-bold font-sora tracking-wider relative z-10">
-        <span class="bg-gradient-to-r from-[#FFD700] via-[#FFD180] to-[#81D4FA] bg-[length:200%_auto] bg-clip-text text-transparent animate-[gradient_3s_ease_infinite]"> SAWIYAN </span>
+        <span class="bg-gradient-to-r from-brand-accent-gold via-brand-accent-orange to-brand-secondary bg-[length:200%_auto] bg-clip-text text-transparent animate-[gradient_3s_ease_infinite]"> SAWIYAN </span>
       </h1>
       <!-- Glow effect -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#FFD700]/30 via-[#FFD180]/30 to-[#81D4FA]/30 blur-2xl opacity-50 animate-pulse"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-accent-gold/30 via-brand-accent-orange/30 to-brand-secondary/30 blur-2xl opacity-50 animate-pulse"></div>
     </div>
 
     <!-- Progress Bar (Optional) -->
     <div class="w-64 md:w-80 h-1 bg-white/20 rounded-full overflow-hidden">
-      <div id="progress-bar" class="h-full bg-gradient-to-r from-[#FFD700] via-[#FFD180] to-[#81D4FA] rounded-full transition-all duration-300" style="width: 0%"></div>
+      <div id="progress-bar" class="h-full bg-gradient-to-r from-brand-accent-gold via-brand-accent-orange to-brand-secondary rounded-full transition-all duration-300" style="width: 0%"></div>
     </div>
   </div>
 
   <!-- Closing animation overlay -->
-  <div id="preloader-closing" class="absolute bg-[#388E3C] rounded-full opacity-0 pointer-events-none" style="left: 50%; top: 50%; width: 0; height: 0; transform: translate(-50%, -50%) scale(0);"></div>
+  <div id="preloader-closing" class="absolute bg-brand-primary rounded-full opacity-0 pointer-events-none" style="left: 50%; top: 50%; width: 0; height: 0; transform: translate(-50%, -50%) scale(0);"></div>
 
   <!-- Cursor Effect -->
   <div id="cursor-effect" class="absolute pointer-events-none opacity-0 z-[10000]" style="left: 50%; top: 50%; transform: translate(-50%, -50%);">
     <!-- Ripple effect circles -->
-    <div id="cursor-ripple-1" class="absolute rounded-full border-4 border-[#FFD700] opacity-0 w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
-    <div id="cursor-ripple-2" class="absolute rounded-full border-4 border-[#FFD180] opacity-0 w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
-    <div id="cursor-ripple-3" class="absolute rounded-full border-4 border-[#81D4FA] opacity-0 w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
+    <div id="cursor-ripple-1" class="absolute rounded-full border-4 border-brand-accent-gold opacity-0 w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
+    <div id="cursor-ripple-2" class="absolute rounded-full border-4 border-brand-accent-orange opacity-0 w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
+    <div id="cursor-ripple-3" class="absolute rounded-full border-4 border-brand-secondary opacity-0 w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
     <!-- Center glow -->
-    <div id="cursor-glow" class="absolute rounded-full bg-gradient-to-r from-[#FFD700] via-[#FFD180] to-[#81D4FA] opacity-0 blur-xl w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
+    <div id="cursor-glow" class="absolute rounded-full bg-gradient-to-r from-brand-accent-gold via-brand-accent-orange to-brand-secondary opacity-0 blur-xl w-20 h-20" style="left: 50%; top: 50%; transform: translate(-50%, -50%);"></div>
   </div>
 </div>
 

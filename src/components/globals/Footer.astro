@@ -1,15 +1,17 @@
 ---
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Youtube } from "lucide-astro";
+
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-[#388E3C] text-white">
+<footer class="bg-brand-primary text-white">
   <div class="container mx-auto px-6 2xl:px-28 py-12 md:py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8">
       <!-- Brand Section -->
       <div class="lg:col-span-1">
         <a href="/" class="inline-block mb-4 group">
           <span class="text-2xl md:text-3xl font-bold tracking-wider relative inline-block">
-            <span class="bg-gradient-to-r from-[#81D4FA] via-[#FFD180] to-[#FFD700] bg-clip-text text-transparent"> SAWIYAN </span>
+            <span class="bg-gradient-to-r from-brand-secondary via-brand-accent-orange to-brand-accent-gold bg-clip-text text-transparent"> SAWIYAN </span>
           </span>
         </a>
         <p class="text-sm text-gray-300 leading-relaxed mb-4">Yayasan Sawiyan bergerak di bidang sosial, kemanusiaan, dan keagamaan dengan komitmen untuk memberikan kontribusi positif bagi masyarakat.</p>
@@ -17,54 +19,54 @@ const currentYear = new Date().getFullYear();
 
       <!-- Quick Links -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-[#FFD180]">Tautan Cepat</h3>
+        <h3 class="text-lg font-semibold mb-4 text-brand-accent-orange">Tautan Cepat</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/profile" class="text-sm text-gray-300 hover:text-[#FFD180] transition-colors duration-200"> Tentang Kami </a>
+            <a href="/profile" class="text-sm text-gray-300 hover:text-brand-accent-orange transition-colors duration-200"> Tentang Kami </a>
           </li>
           <li>
-            <a href="/program" class="text-sm text-gray-300 hover:text-[#FFD180] transition-colors duration-200"> Program </a>
+            <a href="/program" class="text-sm text-gray-300 hover:text-brand-accent-orange transition-colors duration-200"> Program </a>
           </li>
           <li>
-            <a href="/berita" class="text-sm text-gray-300 hover:text-[#FFD180] transition-colors duration-200"> Berita </a>
+            <a href="/berita" class="text-sm text-gray-300 hover:text-brand-accent-orange transition-colors duration-200"> Berita </a>
           </li>
         </ul>
       </div>
 
       <!-- Program -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-[#FFD180]">Program Kami</h3>
+        <h3 class="text-lg font-semibold mb-4 text-brand-accent-orange">Program Kami</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/program#sosial" class="text-sm text-gray-300 hover:text-[#FFD180] transition-colors duration-200"> Program Sosial </a>
+            <a href="/program#sosial" class="text-sm text-gray-300 hover:text-brand-accent-orange transition-colors duration-200"> Program Sosial </a>
           </li>
           <li>
-            <a href="/program#kemanusiaan" class="text-sm text-gray-300 hover:text-[#FFD180] transition-colors duration-200"> Program Kemanusiaan </a>
+            <a href="/program#kemanusiaan" class="text-sm text-gray-300 hover:text-brand-accent-orange transition-colors duration-200"> Program Kemanusiaan </a>
           </li>
           <li>
-            <a href="/program#keagamaan" class="text-sm text-gray-300 hover:text-[#FFD180] transition-colors duration-200"> Program Keagamaan </a>
+            <a href="/program#keagamaan" class="text-sm text-gray-300 hover:text-brand-accent-orange transition-colors duration-200"> Program Keagamaan </a>
           </li>
         </ul>
       </div>
 
       <!-- Kontak -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-[#FFD180]">Hubungi Kami</h3>
+        <h3 class="text-lg font-semibold mb-4 text-brand-accent-orange">Hubungi Kami</h3>
         <ul class="space-y-3 text-sm text-gray-300">
           <li class="flex items-start gap-2">
-            <span class="mt-1">📍</span>
+            <MapPin class="w-4 h-4 mt-1 flex-shrink-0" />
             <span>Jl. Contoh No. 123<br />Kota Anda, Provinsi</span>
           </li>
           <li class="flex items-center gap-2">
-            <span>📞</span>
-            <a href="tel:+6251112345678" class="hover:text-[#FFD180] transition-colors"> (0511) 1234 5678 </a>
+            <Phone class="w-4 h-4 flex-shrink-0" />
+            <a href="tel:+6251112345678" class="hover:text-brand-accent-orange transition-colors"> (0511) 1234 5678 </a>
           </li>
           <li class="flex items-center gap-2">
-            <span>✉️</span>
-            <a href="mailto:info@yayasansawiyan.org" class="hover:text-[#FFD180] transition-colors"> info@yayasansawiyan.org </a>
+            <Mail class="w-4 h-4 flex-shrink-0" />
+            <a href="mailto:info@yayasansawiyan.org" class="hover:text-brand-accent-orange transition-colors"> info@yayasansawiyan.org </a>
           </li>
           <li class="flex items-center gap-2">
-            <span>⏰</span>
+            <Clock class="w-4 h-4 flex-shrink-0" />
             <span>Senin - Jumat<br />08:00 - 16:00 WITA</span>
           </li>
         </ul>
@@ -78,17 +80,17 @@ const currentYear = new Date().getFullYear();
           <span class="text-sm text-gray-300">Ikuti Kami:</span>
         </div>
         <div class="flex gap-4">
-          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#81D4FA] flex items-center justify-center transition-colors duration-200 group" aria-label="Facebook">
-            <span class="text-lg group-hover:scale-110 transition-transform">📘</span>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-secondary flex items-center justify-center transition-colors duration-200 group" aria-label="Facebook">
+            <Facebook class="w-5 h-5 group-hover:scale-110 transition-transform" />
           </a>
-          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#81D4FA] flex items-center justify-center transition-colors duration-200 group" aria-label="Instagram">
-            <span class="text-lg group-hover:scale-110 transition-transform">📷</span>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-secondary flex items-center justify-center transition-colors duration-200 group" aria-label="Instagram">
+            <Instagram class="w-5 h-5 group-hover:scale-110 transition-transform" />
           </a>
-          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#81D4FA] flex items-center justify-center transition-colors duration-200 group" aria-label="Twitter">
-            <span class="text-lg group-hover:scale-110 transition-transform">🐦</span>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-secondary flex items-center justify-center transition-colors duration-200 group" aria-label="Twitter">
+            <Twitter class="w-5 h-5 group-hover:scale-110 transition-transform" />
           </a>
-          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#81D4FA] flex items-center justify-center transition-colors duration-200 group" aria-label="YouTube">
-            <span class="text-lg group-hover:scale-110 transition-transform">▶️</span>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-secondary flex items-center justify-center transition-colors duration-200 group" aria-label="YouTube">
+            <Youtube class="w-5 h-5 group-hover:scale-110 transition-transform" />
           </a>
         </div>
       </div>
@@ -101,9 +103,9 @@ const currentYear = new Date().getFullYear();
           Sawiyan ©{currentYear}. All rights reserved
         </p>
         <div class="flex gap-4 text-sm text-gray-400">
-          <a href="#" class="hover:text-[#FFD180] transition-colors">Kebijakan Privasi</a>
+          <a href="#" class="hover:text-brand-accent-orange transition-colors">Kebijakan Privasi</a>
           <span>|</span>
-          <a href="#" class="hover:text-[#FFD180] transition-colors">Syarat & Ketentuan</a>
+          <a href="#" class="hover:text-brand-accent-orange transition-colors">Syarat & Ketentuan</a>
         </div>
       </div>
     </div>

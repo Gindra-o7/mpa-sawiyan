@@ -2,8 +2,62 @@
 @plugin '@tailwindcss/typography';
 
 @import "@fontsource-variable/merriweather-sans";
+
+:root {
+  /* Primary Colors - Brand Green */
+  --color-primary: #388e3c;
+  --color-primary-dark: #2e7d32;
+  --color-primary-darker: #1b5e20;
+  --color-primary-light: #4caf50;
+  --color-primary-lighter: #43a047;
+
+  /* Secondary Colors - Blue */
+  --color-secondary: #81d4fa;
+  --color-secondary-light: #b3e5fc;
+  --color-secondary-dark: #4fc3f7;
+
+  /* Accent Colors */
+  --color-accent-orange: #ffd180;
+  --color-accent-gold: #ffd700;
+
+  /* Neutral Colors */
+  --color-background: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-tertiary: #6b7280;
+  --color-border: #e5e7eb;
+
+  /* Semantic Usage */
+  --color-selection-bg: var(--color-primary);
+  --color-selection-text: var(--color-surface);
+  --color-selection-bg-inverse: var(--color-accent-gold);
+  --color-selection-text-inverse: var(--color-text-primary);
+
+  /* Gradient Combinations */
+  --gradient-primary: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-darker) 100%);
+  --gradient-primary-hover: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  --gradient-primary-active: linear-gradient(180deg, var(--color-primary-darker) 0%, var(--color-primary-dark) 100%);
+  --gradient-brand: linear-gradient(to right, var(--color-primary), var(--color-secondary), var(--color-accent-gold));
+  --gradient-brand-alt: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+}
+
 @theme {
   --font-merriweather-sans: "Merriweather Sans Variable", "sans-serif";
+
+  /* Tailwind Color Extensions */
+  --color-brand-primary: var(--color-primary);
+  --color-brand-primary-dark: var(--color-primary-dark);
+  --color-brand-primary-darker: var(--color-primary-darker);
+  --color-brand-primary-light: var(--color-primary-light);
+  --color-brand-primary-lighter: var(--color-primary-lighter);
+  --color-brand-secondary: var(--color-secondary);
+  --color-brand-secondary-light: var(--color-secondary-light);
+  --color-brand-secondary-dark: var(--color-secondary-dark);
+  --color-brand-accent-orange: var(--color-accent-orange);
+  --color-brand-accent-gold: var(--color-accent-gold);
+  --color-brand-background: var(--color-background);
+  --color-brand-surface: var(--color-surface);
 }
 
 * {
@@ -20,58 +74,71 @@ body {
 }
 
 ::selection {
-  background-color: #388e3c;
-  color: #ffffff;
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
 }
 
 ::-moz-selection {
-  background-color: #388e3c;
-  color: #ffffff;
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
 }
 
 [class*="bg-[#388E3C"]::selection,
+[class*="bg-brand-primary"]::selection,
 [style*="background-color: #388E3C"]::selection,
 [style*="background-color:#388E3C"]::selection {
-  background-color: #ffd700 !important;
-  color: #1a1a1a !important;
+  background-color: var(--color-selection-bg-inverse) !important;
+  color: var(--color-selection-text-inverse) !important;
 }
 
 [class*="bg-[#388E3C"]::-moz-selection,
+[class*="bg-brand-primary"]::-moz-selection,
 [style*="background-color: #388E3C"]::-moz-selection,
 [style*="background-color:#388E3C"]::-moz-selection {
-  background-color: #ffd700 !important;
-  color: #1a1a1a !important;
+  background-color: var(--color-selection-bg-inverse) !important;
+  color: var(--color-selection-text-inverse) !important;
 }
 
 nav.bg-\[#388E3C\],
+nav.bg-brand-primary,
 footer.bg-\[#388E3C\],
-section[class*="bg-[#388E3C"] {
-  --selection-bg: #ffd700;
-  --selection-color: #1a1a1a;
+footer.bg-brand-primary,
+section[class*="bg-[#388E3C"],
+section[class*="bg-brand-primary"] {
+  --selection-bg: var(--color-selection-bg-inverse);
+  --selection-color: var(--color-selection-text-inverse);
 }
 
 nav.bg-\[#388E3C\] *::selection,
+nav.bg-brand-primary *::selection,
 footer.bg-\[#388E3C\] *::selection,
-section[class*="bg-[#388E3C"] *::selection {
-  background-color: #ffd700 !important;
-  color: #1a1a1a !important;
+footer.bg-brand-primary *::selection,
+section[class*="bg-[#388E3C"] *::selection,
+section[class*="bg-brand-primary"] *::selection {
+  background-color: var(--color-selection-bg-inverse) !important;
+  color: var(--color-selection-text-inverse) !important;
 }
 
 nav.bg-\[#388E3C\] *::-moz-selection,
+nav.bg-brand-primary *::-moz-selection,
 footer.bg-\[#388E3C\] *::-moz-selection,
-section[class*="bg-[#388E3C"] *::-moz-selection {
-  background-color: #ffd700 !important;
-  color: #1a1a1a !important;
+footer.bg-brand-primary *::-moz-selection,
+section[class*="bg-[#388E3C"] *::-moz-selection,
+section[class*="bg-brand-primary"] *::-moz-selection {
+  background-color: var(--color-selection-bg-inverse) !important;
+  color: var(--color-selection-text-inverse) !important;
 }
 
-[class*="bg-[#388E3C"] *::selection {
-  background-color: #ffd700 !important;
-  color: #1a1a1a !important;
+[class*="bg-[#388E3C"] *::selection,
+[class*="bg-brand-primary"] *::selection {
+  background-color: var(--color-selection-bg-inverse) !important;
+  color: var(--color-selection-text-inverse) !important;
 }
 
-[class*="bg-[#388E3C"] *::-moz-selection {
-  background-color: #ffd700 !important;
-  color: #1a1a1a !important;
+[class*="bg-[#388E3C"] *::-moz-selection,
+[class*="bg-brand-primary"] *::-moz-selection {
+  background-color: var(--color-selection-bg-inverse) !important;
+  color: var(--color-selection-text-inverse) !important;
 }
 
 ::-webkit-scrollbar {
@@ -80,29 +147,29 @@ section[class*="bg-[#388E3C"] *::-moz-selection {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f5f5;
+  background: var(--color-background);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #388e3c 0%, #1b5e20 100%);
+  background: var(--gradient-primary);
   border-radius: 10px;
-  border: 2px solid #f5f5f5;
+  border: 2px solid var(--color-background);
   transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #4caf50 0%, #388e3c 100%);
+  background: var(--gradient-primary-hover);
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(180deg, #1b5e20 0%, #2e7d32 100%);
+  background: var(--gradient-primary-active);
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #388e3c #f5f5f5;
+  scrollbar-color: var(--color-primary) var(--color-background);
 }
 
 /* Smooth scrolling */

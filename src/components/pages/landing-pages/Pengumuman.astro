@@ -56,10 +56,10 @@ const pengumumanData = [
 ];
 ---
 
-<section class="bg-gradient-to-br from-[#F5F5F5] via-white to-[#F5F5F5] py-16 lg:py-24 relative">
+<section class="bg-gradient-to-br from-gray-100 via-white to-gray-100 py-16 lg:py-24 relative">
   <!-- Background decorative elements -->
-  <div class="absolute top-0 right-0 w-96 h-96 bg-[#388E3C]/5 rounded-full blur-3xl -z-10"></div>
-  <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#81D4FA]/5 rounded-full blur-3xl -z-10"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl -z-10"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-secondary/5 rounded-full blur-3xl -z-10"></div>
 
   <div class="container mx-auto px-6 md:px-8 max-w-7xl relative z-10">
     <div class="flex flex-col gap-12">
@@ -67,11 +67,11 @@ const pengumumanData = [
       <div class="flex gap-7 flex-col lg:flex-row lg:items-center lg:justify-between">
         <div class="lg:w-7/12 space-y-4 mb-10">
           {/* Badge */}
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#388E3C]/10 rounded-full border border-[#388E3C]/20">
-            <span class="text-sm font-medium text-[#388E3C] uppercase tracking-wider">Berita Terkini</span>
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-primary/10 rounded-full border border-brand-primary/20">
+            <span class="text-sm font-medium text-brand-primary uppercase tracking-wider">Berita Terkini</span>
           </div>
 
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#388E3C] via-[#81D4FA] to-[#FFD700] bg-clip-text text-transparent tracking-tight leading-tight pb-2">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent-gold bg-clip-text text-transparent tracking-tight leading-tight pb-2">
             {title}
           </h2>
         </div>
@@ -80,7 +80,7 @@ const pengumumanData = [
         <div class="flex justify-end items-center">
           <a
             href={linkHref}
-            class="group relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#388E3C] to-[#81D4FA] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
+            class="group relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden"
           >
             {/* Shine effect */}
             <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
@@ -100,22 +100,22 @@ const pengumumanData = [
                   {/* Card Container dengan depth dan shadow sesuai tema */}
                   <div class="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200/50 bg-white shadow-lg hover:shadow-2xl transition-all duration-300 relative">
                     {/* Decorative gradient accent */}
-                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#388E3C] via-[#81D4FA] to-[#FFD180] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                    <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
                     {/* Decorative corner element */}
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#81D4FA]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-secondary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
 
                     {/* Block 1: Gambar dengan overlay */}
                     <a href={`/berita/${pengumuman.slug}`} class="block shrink-0 relative overflow-hidden">
                       <img src={pengumuman.url_thumbnail} alt={`Thumbnail untuk ${pengumuman.judul}`} class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                       {/* Gradient overlay on hover */}
-                      <div class="absolute inset-0 bg-gradient-to-t from-[#388E3C]/0 to-[#388E3C]/0 group-hover:from-[#388E3C]/20 group-hover:to-transparent transition-all duration-300" />
+                      <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/0 to-brand-primary/0 group-hover:from-brand-primary/20 group-hover:to-transparent transition-all duration-300" />
                     </a>
 
                     {/* Block 2: Konten Teks */}
                     <div class="flex flex-grow flex-col p-6 relative">
                       {/* Background decorative element */}
-                      <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#81D4FA]/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-secondary/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                       <span class="text-sm text-gray-500 font-medium relative z-10">
                         {new Intl.DateTimeFormat("id-ID", {
@@ -128,7 +128,7 @@ const pengumumanData = [
                         }).format(new Date(pengumuman.date_created))}
                       </span>
                       <h5 class="my-2 text-xl font-bold leading-tight text-gray-900 relative z-10">
-                        <a href={`/berita/${pengumuman.slug}`} class="hover:text-[#388E3C] transition-colors duration-200">
+                        <a href={`/berita/${pengumuman.slug}`} class="hover:text-brand-primary transition-colors duration-200">
                           {pengumuman.judul}
                         </a>
                       </h5>
@@ -136,10 +136,10 @@ const pengumumanData = [
 
                       {/* Block 3: Tombol "Read More" dengan enhanced styling */}
                       <div class="mt-auto relative z-10">
-                        <a href={`/berita/${pengumuman.slug}`} class="group/btn inline-flex items-center gap-2 font-semibold text-[#388E3C] hover:text-[#81D4FA] transition-colors duration-200">
+                        <a href={`/berita/${pengumuman.slug}`} class="group/btn inline-flex items-center gap-2 font-semibold text-brand-primary hover:text-brand-secondary transition-colors duration-200">
                           <span class="relative">
                             Baca Selengkapnya
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#388E3C] to-[#81D4FA] group-hover/btn:w-full transition-all duration-300" />
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-brand-primary to-brand-secondary group-hover/btn:w-full transition-all duration-300" />
                           </span>
                           <ArrowRight class="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
                         </a>
@@ -154,12 +154,12 @@ const pengumumanData = [
 
         {/* Navigation Buttons */}
         <button
-          class="embla__prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 hidden lg:flex items-center justify-center w-12 h-12 bg-gradient-to-r from-[#388E3C] to-[#81D4FA] backdrop-blur-sm rounded-full shadow-lg text-white hover:shadow-xl hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#388E3C] disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 z-20"
+          class="embla__prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 hidden lg:flex items-center justify-center w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-secondary backdrop-blur-sm rounded-full shadow-lg text-white hover:shadow-xl hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 z-20"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
         </button>
         <button
-          class="embla__next absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 hidden lg:flex items-center justify-center w-12 h-12 bg-gradient-to-r from-[#388E3C] to-[#81D4FA] backdrop-blur-sm rounded-full shadow-lg text-white hover:shadow-xl hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#388E3C] disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 z-20"
+          class="embla__next absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 hidden lg:flex items-center justify-center w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-secondary backdrop-blur-sm rounded-full shadow-lg text-white hover:shadow-xl hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 z-20"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
         </button>
